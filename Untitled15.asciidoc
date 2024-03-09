@@ -1,0 +1,123 @@
++*In[1]:*+
+[source, ipython3]
+----
+class Point3D:
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def get_coordinates(self):
+        return self.x, self.y, self.z
+
+# Créez une instance de Point3D avec x=1, y=2 et z=3
+my_point = Point3D(1, 2, 3)
+print("Coordonnées de my_point:", my_point.get_coordinates())
+----
+
+
++*Out[1]:*+
+----
+Coordonnées de my_point: (1, 2, 3)
+----
+
+
++*In[2]:*+
+[source, ipython3]
+----
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+    def perimeter(self):
+        return 2 * (self.length + self.width)
+
+# Créez une instance de Rectangle avec width=3 et length=4
+my_rectangle = Rectangle(length=4, width=3)
+print("Aire du rectangle:", my_rectangle.area())
+print("Périmètre du rectangle:", my_rectangle.perimeter())
+----
+
+
++*Out[2]:*+
+----
+Aire du rectangle: 12
+Périmètre du rectangle: 14
+----
+
+
++*In[3]:*+
+[source, ipython3]
+----
+import math
+
+class Circle:
+    def __init__(self, center_x, center_y, radius):
+        self.center_x = center_x
+        self.center_y = center_y
+        self.radius = radius
+
+    def area(self):
+        return math.pi * self.radius ** 2
+
+    def perimeter(self):
+        return 2 * math.pi * self.radius
+
+    def inside(self, point_x, point_y):
+        distance = math.sqrt((point_x - self.center_x) ** 2 + (point_y - self.center_y) ** 2)
+        return distance <= self.radius# Créez une instance de Circle avec centre O(0, 0) et rayon r=5
+my_circle = Circle(center_x=0, center_y=0, radius=5)
+print("Aire du cercle:", my_circle.area())
+print("Périmètre du cercle:", my_circle.perimeter())
+print("Le point (2, 3) est à l'intérieur du cercle:", my_circle.inside(point_x=2, point_y=3))
+    
+----
+
+
++*Out[3]:*+
+----
+Aire du cercle: 78.53981633974483
+Périmètre du cercle: 31.41592653589793
+Le point (2, 3) est à l'intérieur du cercle: True
+----
+
+
++*In[4]:*+
+[source, ipython3]
+----
+class Bank:
+    def __init__(self, initial_balance):
+        self.balance = initial_balance
+
+    def deposit(self, amount):
+        self.balance += amount
+
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+        else:
+            print("Fonds insuffisants pour le retrait.")
+
+# Créez une instance de Bank avec un solde initial de 1000
+my_account = Bank(initial_balance=1000)
+my_account.deposit(500)
+my_account.withdraw(200)
+print("Solde actuel:", my_account.balance)
+----
+
+
++*Out[4]:*+
+----
+Solde actuel: 1300
+----
+
+
++*In[ ]:*+
+[source, ipython3]
+----
+
+----
